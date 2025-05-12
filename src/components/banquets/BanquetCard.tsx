@@ -1,3 +1,4 @@
+// src/components/banquets/BanquetCard.tsx
 "use client";
 import type { Banquet, Recipe } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -47,17 +48,17 @@ export function BanquetCard({ banquet, recipes, onDelete }: BanquetCardProps) {
       </CardContent>
       <CardFooter className="flex justify-end gap-2 border-t pt-4">
         <Link href={`/banquets/${banquet.id}`} passHref>
-          <Button variant="outline" size="sm">
-            <Eye className="mr-2 h-4 w-4" /> Detalles
+          <Button variant="outline" size="icon" aria-label="Detalles del banquete">
+            <Eye className="h-4 w-4" />
           </Button>
         </Link>
         <Link href={`/banquets/${banquet.id}/edit`} passHref>
-          <Button variant="outline" size="sm">
-            <Edit3 className="mr-2 h-4 w-4" /> Editar
+          <Button variant="outline" size="icon" aria-label="Editar banquete">
+            <Edit3 className="h-4 w-4" />
           </Button>
         </Link>
-        <Button variant="destructive" size="sm" onClick={() => onDelete(banquet.id)}>
-          <Trash2 className="mr-2 h-4 w-4" /> Eliminar
+        <Button variant="destructive" size="icon" onClick={() => onDelete(banquet.id)} aria-label="Eliminar banquete">
+          <Trash2 className="h-4 w-4" />
         </Button>
       </CardFooter>
     </Card>
