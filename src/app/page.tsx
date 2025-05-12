@@ -7,7 +7,7 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto py-8">
       <header className="mb-10 text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-primary">Bienvenido a CateringFlow</h1>
+        <h1 className="text-5xl font-bold tracking-tight text-primary">Bienvenido a MUMO catering</h1>
         <p className="mt-4 text-xl text-muted-foreground">
           Optimiza tus operaciones de catering, desde la receta hasta el banquete, y minimiza el desperdicio.
         </p>
@@ -20,9 +20,9 @@ export default function DashboardPage() {
               <ChefHat className="text-accent" />
               Gestionar Recetas
             </CardTitle>
-            <CardDescription className="mt-2">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
+            <CardDescription className="mt-2 px-2">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow pt-2">
+          <CardContent className="flex flex-col flex-grow pt-2 px-6">
             <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Recetas</Button>
@@ -36,9 +36,9 @@ export default function DashboardPage() {
               <PartyPopper className="text-accent" />
               Planificar Banquetes
             </CardTitle>
-            <CardDescription className="mt-2">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
+            <CardDescription className="mt-2 px-2">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow pt-2">
+          <CardContent className="flex flex-col flex-grow pt-2 px-6">
             <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Banquetes</Button>
@@ -52,9 +52,9 @@ export default function DashboardPage() {
               <Sparkles className="text-accent" />
               Reducir Desperdicios
             </CardTitle>
-            <CardDescription className="mt-2">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
+            <CardDescription className="mt-2 px-2">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow pt-2">
+          <CardContent className="flex flex-col flex-grow pt-2 px-6">
             <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Obtener Sugerencias de IA</Button>
@@ -68,7 +68,7 @@ export default function DashboardPage() {
             <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-semibold mb-3">Optimiza Tu Negocio de Catering</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                CateringFlow te ayuda a tomar decisiones basadas en datos para mejorar la eficiencia, reducir costos y ofrecer experiencias culinarias excepcionales.
+                MUMO catering te ayuda a tomar decisiones basadas en datos para mejorar la eficiencia, reducir costos y ofrecer experiencias culinarias excepcionales.
             </p>
         </div>
       </section>

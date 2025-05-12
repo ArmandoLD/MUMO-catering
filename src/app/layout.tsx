@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'CateringFlow',
-  description: 'Gestiona eficientemente tus recetas de catering, banquetes y reduce el desperdicio de alimentos.',
+  title: 'MUMO catering',
+  description: 'Gestiona eficientemente tus recetas de catering, banquetes y reduce el desperdicio de alimentos con MUMO catering.',
 };
 
 export default function RootLayout({
