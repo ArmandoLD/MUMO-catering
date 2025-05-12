@@ -34,7 +34,7 @@ export default function DashboardPage() {
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
-              Planificar Banquetes
+              Banquetes
             </CardTitle>
             <CardDescription className="mt-2 px-2">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
@@ -50,7 +50,7 @@ export default function DashboardPage() {
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
-              Reducir Desperdicios
+              Desperdicios
             </CardTitle>
             <CardDescription className="mt-2 px-2">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
