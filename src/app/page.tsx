@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -14,7 +15,7 @@ export default function DashboardPage() {
       </header>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-sm mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <ChefHat className="text-accent" />
@@ -30,7 +31,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-sm mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
@@ -46,7 +47,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-sm mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
