@@ -14,48 +14,48 @@ export default function DashboardPage() {
       </header>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <ChefHat className="text-accent" />
               Gestionar Recetas
             </CardTitle>
-            <CardDescription className="mt-2 px-2 min-h-12">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-[60px] text-center">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[60px]">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[80px]">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref className="mt-auto">
               <Button className="w-full" variant="default">Ir a Recetas</Button>
             </Link>
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
               Banquetes
             </CardTitle>
-            <CardDescription className="mt-2 px-2 min-h-12">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-[60px] text-center">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[60px]">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[80px]">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref className="mt-auto">
               <Button className="w-full" variant="default">Ir a Banquetes</Button>
             </Link>
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col max-w-[280px] min-h-[450px] mx-auto">
           <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
               Desperdicios
             </CardTitle>
-            <CardDescription className="mt-2 px-2 min-h-12">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-[60px] text-center">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[60px]">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow min-h-[80px]">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref className="mt-auto">
               <Button className="w-full" variant="default">Obtener Sugerencias de IA</Button>
             </Link>
