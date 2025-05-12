@@ -13,17 +13,17 @@ export default function DashboardPage() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <ChefHat className="text-accent" />
               Gestionar Recetas
             </CardTitle>
-            <CardDescription>Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
+            <CardDescription className="mt-2">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow">
-            <p className="mb-4 text-center">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
+          <CardContent className="flex flex-col flex-grow pt-2">
+            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Recetas</Button>
             </Link>
@@ -31,15 +31,15 @@ export default function DashboardPage() {
         </Card>
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
               Planificar Banquetes
             </CardTitle>
-            <CardDescription>Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
+            <CardDescription className="mt-2">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow">
-            <p className="mb-4 text-center">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
+          <CardContent className="flex flex-col flex-grow pt-2">
+            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Banquetes</Button>
             </Link>
@@ -47,15 +47,15 @@ export default function DashboardPage() {
         </Card>
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center pb-4">
             <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
               Reducir Desperdicios
             </CardTitle>
-            <CardDescription>Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
+            <CardDescription className="mt-2">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col flex-grow">
-            <p className="mb-4 text-center">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
+          <CardContent className="flex flex-col flex-grow pt-2">
+            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Obtener Sugerencias de IA</Button>
             </Link>

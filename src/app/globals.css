@@ -17,7 +17,7 @@ body {
     --popover: 240 100% 99%; /* Popovers same as background */
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 120 25% 65%; /* #8FBC8F DarkSeaGreen (Light Green) */
+    --primary: 120 35% 60%; /* Adjusted from 120 25% 65% for a slightly brighter green */
     --primary-foreground: 240 10% 15%; /* Darker text on light green */
 
     --secondary: 240 10% 92%; /* Light Gray for secondary elements */
@@ -34,26 +34,26 @@ body {
 
     --border: 240 10% 88%; /* Border color */
     --input: 240 10% 90%; /* Input background */
-    --ring: 120 25% 65%; /* Ring color matching primary */
+    --ring: 120 35% 60%; /* Ring color matching adjusted primary */
 
     --radius: 0.5rem;
 
     /* Chart colors (can be adjusted if charts are heavily used) */
-    --chart-1: 120 25% 65%; /* Primary */
+    --chart-1: 120 35% 60%; /* Primary */
     --chart-2: 33 100% 64%;  /* Accent */
     --chart-3: 240 10% 50%; /* Neutral Grey */
-    --chart-4: 120 25% 75%; /* Lighter Primary */
+    --chart-4: 120 35% 70%; /* Lighter Primary */
     --chart-5: 33 100% 75%;  /* Lighter Accent */
 
     /* Sidebar specific colors */
     --sidebar-background: 240 30% 98%; /* Very light gray, slightly distinct from main bg */
     --sidebar-foreground: 240 10% 25%; /* Dark gray text */
-    --sidebar-primary: 120 25% 60%; /* Slightly darker primary for sidebar active elements */
+    --sidebar-primary: 120 35% 55%; /* Slightly darker primary for sidebar active elements */
     --sidebar-primary-foreground: 0 0% 98%; /* White text on sidebar primary */
-    --sidebar-accent: 120 25% 90%; /* Lighter green for sidebar hover */
+    --sidebar-accent: 120 35% 90%; /* Lighter green for sidebar hover */
     --sidebar-accent-foreground: 240 10% 15%; /* Dark text on sidebar accent */
     --sidebar-border: 240 10% 90%; /* Sidebar border */
-    --sidebar-ring: 120 25% 65%; /* Sidebar ring matching primary */
+    --sidebar-ring: 120 35% 60%; /* Sidebar ring matching adjusted primary */
   }
 
   .dark {
@@ -66,7 +66,7 @@ body {
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 120 25% 65%;
+    --primary: 120 35% 60%; /* Adjusted from 120 25% 65% */
     --primary-foreground: 240 10% 15%;
 
     --secondary: 240 10% 14.9%;
@@ -83,24 +83,24 @@ body {
 
     --border: 240 10% 14.9%;
     --input: 240 10% 14.9%;
-    --ring: 120 25% 65%;
+    --ring: 120 35% 60%; /* Adjusted primary */
 
     /* Chart colors */
-    --chart-1: 120 25% 55%;
+    --chart-1: 120 35% 55%;
     --chart-2: 33 100% 54%;
     --chart-3: 240 10% 70%;
-    --chart-4: 120 25% 45%;
+    --chart-4: 120 35% 45%;
     --chart-5: 33 100% 44%;
     
     /* Sidebar specific colors */
     --sidebar-background: 240 10% 7%; 
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 120 25% 65%;
+    --sidebar-primary: 120 35% 60%; /* Adjusted primary */
     --sidebar-primary-foreground: 240 10% 15%;
     --sidebar-accent: 240 10% 18%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 240 10% 15%;
-    --sidebar-ring: 120 25% 65%;
+    --sidebar-ring: 120 35% 60%; /* Adjusted primary */
   }
 }
 
