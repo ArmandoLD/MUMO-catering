@@ -16,11 +16,11 @@ export function BanquetList({ banquets, recipes, onDeleteBanquet }: BanquetListP
     return (
       <div className="text-center py-10">
         <PartyPopper className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
-        <h2 className="text-2xl font-semibold mb-2">No Banquets Yet</h2>
-        <p className="text-muted-foreground mb-4">Start planning your first event!</p>
+        <h2 className="text-2xl font-semibold mb-2">Aún No Hay Banquetes</h2>
+        <p className="text-muted-foreground mb-4">¡Comienza planificando tu primer evento!</p>
         <Link href="/banquets/new" passHref>
           <Button>
-            <PlusCircle className="mr-2 h-4 w-4" /> Add New Banquet
+            <PlusCircle className="mr-2 h-4 w-4" /> Añadir Nuevo Banquete
           </Button>
         </Link>
       </div>

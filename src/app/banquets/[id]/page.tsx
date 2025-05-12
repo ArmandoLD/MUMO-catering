@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Users, Edit3, Trash2 } from "lucide-react";
 import { format } from "date-fns";
+import { es } from "date-fns/locale"; // Import Spanish locale
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -71,13 +72,13 @@ export default function BanquetDetailPage() {
   }
 
   if (!banquet) {
-    return <div className="container mx-auto py-8 text-center">Banquet not found.</div>;
+    return <div className="container mx-auto py-8 text-center">Banquete no encontrado.</div>;
   }
 
   return (
     <div className="container mx-auto py-8">
       <Button variant="outline" onClick={() => router.back()} className="mb-6">
-        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Banquets
+        <ArrowLeft className="mr-2 h-4 w-4" /> Volver a Banquetes
       </Button>
 
       <Card className="mb-8 shadow-xl">
@@ -86,20 +87,20 @@ export default function BanquetDetailPage() {
             <div>
               <CardTitle className="text-3xl font-bold text-primary">{banquet.name}</CardTitle>
               <CardDescription className="mt-1 text-lg">
-                <span className="flex items-center gap-2"><CalendarDays className="w-5 h-5 text-muted-foreground" /> {format(new Date(banquet.date), "PPPP")}</span>
-                <span className="flex items-center gap-2 mt-1"><Users className="w-5 h-5 text-muted-foreground" /> {banquet.guestCount} Guests</span>
+                <span className="flex items-center gap-2"><CalendarDays className="w-5 h-5 text-muted-foreground" /> {format(new Date(banquet.date), "PPPP", { locale: es })}</span>
+                <span className="flex items-center gap-2 mt-1"><Users className="w-5 h-5 text-muted-foreground" /> {banquet.guestCount} Comensales</span>
               </CardDescription>
             </div>
             <div className="flex gap-2 mt-2 sm:mt-0">
               <Link href={`/banquets/${banquet.id}/edit`} passHref>
-                <Button variant="outline" size="sm"><Edit3 className="mr-2 h-4 w-4" />Edit</Button>
+                <Button variant="outline" size="sm"><Edit3 className="mr-2 h-4 w-4" />Editar</Button>
               </Link>
-              <Button variant="destructive" size="sm" onClick={handleDeleteBanquet}><Trash2 className="mr-2 h-4 w-4" />Delete</Button>
+              <Button variant="destructive" size="sm" onClick={handleDeleteBanquet}><Trash2 className="mr-2 h-4 w-4" />Eliminar</Button>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <h3 className="text-xl font-semibold mb-2 mt-4">Menu</h3>
+          <h3 className="text-xl font-semibold mb-2 mt-4">Menú</h3>
           {banquetRecipes.length > 0 ? (
             <div className="flex flex-wrap gap-2">
               {banquetRecipes.map(recipe => (
@@ -107,7 +108,7 @@ export default function BanquetDetailPage() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground">No recipes selected for this banquet.</p>
+            <p className="text-muted-foreground">No hay recetas seleccionadas para este banquete.</p>
           )}
         </CardContent>
       </Card>

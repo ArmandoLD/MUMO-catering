@@ -46,7 +46,7 @@ export default function EditBanquetPage() {
   }
 
   if (!banquet) {
-    return <div className="container mx-auto py-8 text-center">Banquet not found.</div>;
+    return <div className="container mx-auto py-8 text-center">Banquete no encontrado.</div>;
   }
 
   return (

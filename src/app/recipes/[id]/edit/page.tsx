@@ -45,7 +45,7 @@ export default function EditRecipePage() {
   }
 
   if (!recipe) {
-    return <div className="container mx-auto py-8 text-center">Recipe not found.</div>;
+    return <div className="container mx-auto py-8 text-center">Receta no encontrada.</div>;
   }
 
   return (

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'CateringFlow',
-  description: 'Efficiently manage your catering recipes, banquets, and reduce food waste.',
+  description: 'Gestiona eficientemente tus recetas de catering, banquetes y reduce el desperdicio de alimentos.',
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AppLayout>
           {children}

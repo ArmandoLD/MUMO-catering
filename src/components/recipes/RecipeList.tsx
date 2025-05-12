@@ -15,11 +15,11 @@ export function RecipeList({ recipes, onDeleteRecipe }: RecipeListProps) {
     return (
       <div className="text-center py-10">
         <ChefHat className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
-        <h2 className="text-2xl font-semibold mb-2">No Recipes Yet</h2>
-        <p className="text-muted-foreground mb-4">Start by adding your first culinary creation!</p>
+        <h2 className="text-2xl font-semibold mb-2">Aún No Hay Recetas</h2>
+        <p className="text-muted-foreground mb-4">¡Comienza añadiendo tu primera creación culinaria!</p>
         <Link href="/recipes/new" passHref>
           <Button>
-            <PlusCircle className="mr-2 h-4 w-4" /> Add New Recipe
+            <PlusCircle className="mr-2 h-4 w-4" /> Añadir Nueva Receta
           </Button>
         </Link>
       </div>

@@ -61,7 +61,7 @@ export function IngredientCalculator({ banquet, recipes }: IngredientCalculatorP
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-xl">
           <Calculator className="w-5 h-5 text-primary" />
-          Calculated Ingredients for {banquet.guestCount} Guests
+          Ingredientes Calculados para {banquet.guestCount} Comensales
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -69,9 +69,9 @@ export function IngredientCalculator({ banquet, recipes }: IngredientCalculatorP
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Ingredient</TableHead>
-                <TableHead className="text-right">Total Quantity</TableHead>
-                <TableHead>Unit</TableHead>
+                <TableHead>Ingrediente</TableHead>
+                <TableHead className="text-right">Cantidad Total</TableHead>
+                <TableHead>Unidad</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -85,7 +85,7 @@ export function IngredientCalculator({ banquet, recipes }: IngredientCalculatorP
             </TableBody>
           </Table>
         ) : (
-          <p className="text-muted-foreground">No ingredients to calculate. Check if recipes have servings defined or menu is empty.</p>
+          <p className="text-muted-foreground">No hay ingredientes para calcular. Comprueba si las recetas tienen porciones definidas o si el menú está vacío.</p>
         )}
       </CardContent>
     </Card>

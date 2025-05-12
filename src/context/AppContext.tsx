@@ -46,7 +46,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       servingsPerRecipe: recipeData.servingsPerRecipeStr ? parseInt(recipeData.servingsPerRecipeStr) : undefined,
     };
     setRecipes(prev => [...prev, newRecipe]);
-    toast({ title: "Recipe Added", description: `${newRecipe.name} has been successfully added.` });
+    toast({ title: "Receta Añadida", description: `${newRecipe.name} ha sido añadida exitosamente.` });
   };
 
   const updateRecipe = (recipeId: string, recipeData: RecipeFormData) => {
@@ -56,15 +56,13 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       ingredients: recipeData.ingredients.map(ing => ({ ...ing, id: ing.id || generateId() })),
       servingsPerRecipe: recipeData.servingsPerRecipeStr ? parseInt(recipeData.servingsPerRecipeStr) : r.servingsPerRecipe,
     } : r));
-    toast({ title: "Recipe Updated", description: `${recipeData.name} has been successfully updated.` });
+    toast({ title: "Receta Actualizada", description: `${recipeData.name} ha sido actualizada exitosamente.` });
   };
 
   const deleteRecipe = (recipeId: string) => {
-    // Also check if recipe is used in any banquets, if so, prevent deletion or warn.
-    // For now, simple deletion.
-    const recipeName = getRecipeById(recipeId)?.name || "Recipe";
+    const recipeName = getRecipeById(recipeId)?.name || "La receta";
     setRecipes(prev => prev.filter(r => r.id !== recipeId));
-    toast({ title: "Recipe Deleted", description: `${recipeName} has been deleted.`, variant: "destructive" });
+    toast({ title: "Receta Eliminada", description: `${recipeName} ha sido eliminada.`, variant: "destructive" });
   };
 
   const addBanquet = (banquetData: BanquetFormData) => {
@@ -74,7 +72,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       guestCount: banquetData.guestCountStr ? parseInt(banquetData.guestCountStr) : 0,
     };
     setBanquets(prev => [...prev, newBanquet]);
-    toast({ title: "Banquet Added", description: `${newBanquet.name} has been successfully added.` });
+    toast({ title: "Banquete Añadido", description: `${newBanquet.name} ha sido añadido exitosamente.` });
   };
 
   const updateBanquet = (banquetId: string, banquetData: BanquetFormData) => {
@@ -83,15 +81,14 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       ...banquetData,
       guestCount: banquetData.guestCountStr ? parseInt(banquetData.guestCountStr) : b.guestCount,
     } : b));
-    toast({ title: "Banquet Updated", description: `${banquetData.name} has been successfully updated.` });
+    toast({ title: "Banquete Actualizado", description: `${banquetData.name} ha sido actualizado exitosamente.` });
   };
 
   const deleteBanquet = (banquetId: string) => {
-    const banquetName = getBanquetById(banquetId)?.name || "Banquet";
+    const banquetName = getBanquetById(banquetId)?.name || "El banquete";
     setBanquets(prev => prev.filter(b => b.id !== banquetId));
-    // Also delete associated waste entries
     setWasteEntries(prev => prev.filter(w => w.banquetId !== banquetId));
-    toast({ title: "Banquet Deleted", description: `${banquetName} has been deleted.`, variant: "destructive" });
+    toast({ title: "Banquete Eliminado", description: `${banquetName} ha sido eliminado.`, variant: "destructive" });
   };
 
   const addWasteEntry = (banquetId: string, wasteData: WasteEntryFormData) => {
@@ -103,7 +100,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       wastedQuantity: wasteData.wastedQuantityStr ? parseFloat(wasteData.wastedQuantityStr) : 0,
     };
     setWasteEntries(prev => [...prev, newWasteEntry]);
-    toast({ title: "Waste Entry Added", description: `Waste for ${wasteData.ingredientName} has been logged.` });
+    toast({ title: "Registro de Desperdicio Añadido", description: `El desperdicio de ${wasteData.ingredientName} ha sido registrado.` });
   };
   
   const getWasteEntriesByBanquet = useCallback((banquetId: string) => {
@@ -122,7 +119,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         ingredient: waste.ingredientName,
         wastedQuantity: waste.wastedQuantity,
         unit: waste.unit,
-        numberOfServings: banquet?.guestCount || 0, // Or servings tied to recipe in banquet context
+        numberOfServings: banquet?.guestCount || 0, 
       };
     });
   }, [wasteEntries, getRecipeById, getBanquetById]);

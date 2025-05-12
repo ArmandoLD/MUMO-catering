@@ -1,48 +1,48 @@
-import type { Recipe, Banquet, Ingredient } from './types';
+import type { Recipe, Banquet, Ingredient, WasteEntry } from './types'; // Added WasteEntry for full context
 
 const generateId = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
 
 export const initialRecipes: Recipe[] = [
   {
     id: generateId(),
-    name: 'Tomato Soup',
-    description: 'Classic creamy tomato soup.',
+    name: 'Sopa de Tomate',
+    description: 'Sopa de tomate clásica y cremosa.',
     ingredients: [
-      { id: generateId(), name: 'Tomatoes', quantity: 1, unit: 'kg' },
-      { id: generateId(), name: 'Onion', quantity: 1, unit: 'piece' },
-      { id: generateId(), name: 'Garlic', quantity: 2, unit: 'cloves' },
-      { id: generateId(), name: 'Vegetable Broth', quantity: 500, unit: 'ml' },
-      { id: generateId(), name: 'Cream', quantity: 100, unit: 'ml' },
+      { id: generateId(), name: 'Tomates', quantity: 1, unit: 'kg' },
+      { id: generateId(), name: 'Cebolla', quantity: 1, unit: 'unidad' },
+      { id: generateId(), name: 'Ajo', quantity: 2, unit: 'dientes' },
+      { id: generateId(), name: 'Caldo de Verduras', quantity: 500, unit: 'ml' },
+      { id: generateId(), name: 'Nata', quantity: 100, unit: 'ml' },
     ],
-    instructions: 'Sauté onion and garlic. Add tomatoes and broth. Simmer. Blend. Stir in cream.',
+    instructions: 'Sofreír cebolla y ajo. Añadir tomates y caldo. Cocinar a fuego lento. Triturar. Incorporar la nata.',
     servingsPerRecipe: 4,
   },
   {
     id: generateId(),
-    name: 'Chicken Alfredo Pasta',
-    description: 'Rich and creamy chicken alfredo.',
+    name: 'Pasta Alfredo con Pollo',
+    description: 'Pasta alfredo rica y cremosa con pollo.',
     ingredients: [
-      { id: generateId(), name: 'Chicken Breast', quantity: 2, unit: 'pieces' },
-      { id: generateId(), name: 'Fettuccine Pasta', quantity: 250, unit: 'g' },
-      { id: generateId(), name: 'Heavy Cream', quantity: 200, unit: 'ml' },
-      { id: generateId(), name: 'Parmesan Cheese', quantity: 50, unit: 'g' },
-      { id: generateId(), name: 'Butter', quantity: 30, unit: 'g' },
-      { id: generateId(), name: 'Garlic', quantity: 2, unit: 'cloves' },
+      { id: generateId(), name: 'Pechuga de Pollo', quantity: 2, unit: 'unidades' },
+      { id: generateId(), name: 'Pasta Fettuccine', quantity: 250, unit: 'g' },
+      { id: generateId(), name: 'Nata para cocinar', quantity: 200, unit: 'ml' },
+      { id: generateId(), name: 'Queso Parmesano', quantity: 50, unit: 'g' },
+      { id: generateId(), name: 'Mantequilla', quantity: 30, unit: 'g' },
+      { id: generateId(), name: 'Ajo', quantity: 2, unit: 'dientes' },
     ],
-    instructions: 'Cook pasta. Cook chicken. Make alfredo sauce with cream, butter, garlic, parmesan. Combine all.',
+    instructions: 'Cocinar la pasta. Cocinar el pollo. Hacer salsa alfredo con nata, mantequilla, ajo y parmesano. Combinar todo.',
     servingsPerRecipe: 3,
   },
   {
     id: generateId(),
-    name: 'Caesar Salad',
-    description: 'Crisp romaine with Caesar dressing and croutons.',
+    name: 'Ensalada César',
+    description: 'Lechuga romana crujiente con aderezo César y picatostes.',
     ingredients: [
-      { id: generateId(), name: 'Romaine Lettuce', quantity: 1, unit: 'head' },
-      { id: generateId(), name: 'Croutons', quantity: 1, unit: 'cup' },
-      { id: generateId(), name: 'Parmesan Cheese', quantity: 30, unit: 'g' },
-      { id: generateId(), name: 'Caesar Dressing', quantity: 100, unit: 'ml' },
+      { id: generateId(), name: 'Lechuga Romana', quantity: 1, unit: 'unidad' },
+      { id: generateId(), name: 'Picatostes', quantity: 1, unit: 'taza' },
+      { id: generateId(), name: 'Queso Parmesano', quantity: 30, unit: 'g' },
+      { id: generateId(), name: 'Aderezo César', quantity: 100, unit: 'ml' },
     ],
-    instructions: 'Chop lettuce. Toss with dressing, parmesan, and croutons.',
+    instructions: 'Cortar la lechuga. Mezclar con el aderezo, parmesano y picatostes.',
     servingsPerRecipe: 4,
   },
 ];
@@ -50,22 +50,22 @@ export const initialRecipes: Recipe[] = [
 export const initialBanquets: Banquet[] = [
   {
     id: generateId(),
-    name: 'Summer Gala Dinner',
+    name: 'Cena de Gala de Verano',
     date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // One week from now
     guestCount: 50,
     menu: [
-      { recipeId: initialRecipes[0]?.id || '' }, // Tomato Soup
-      { recipeId: initialRecipes[1]?.id || '' }, // Chicken Alfredo
+      { recipeId: initialRecipes[0]?.id || '' }, // Sopa de Tomate
+      { recipeId: initialRecipes[1]?.id || '' }, // Pasta Alfredo con Pollo
     ],
   },
   {
     id: generateId(),
-    name: 'Corporate Lunch',
+    name: 'Almuerzo Corporativo',
     date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Two weeks from now
     guestCount: 20,
     menu: [
-      { recipeId: initialRecipes[2]?.id || '' }, // Caesar Salad
-      { recipeId: initialRecipes[0]?.id || '' }, // Tomato Soup
+      { recipeId: initialRecipes[2]?.id || '' }, // Ensalada César
+      { recipeId: initialRecipes[0]?.id || '' }, // Sopa de Tomate
     ],
   },
 ];
@@ -75,24 +75,24 @@ export const initialWasteEntries: WasteEntry[] = [
         id: generateId(),
         banquetId: initialBanquets[0]?.id || '',
         recipeId: initialRecipes[0]?.id || '',
-        ingredientName: 'Tomatoes',
+        ingredientName: 'Tomates',
         wastedQuantity: 0.5,
         unit: 'kg',
-        reason: 'Over-portioned',
+        reason: 'Porciones excesivas',
         dateRecorded: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
     },
     {
         id: generateId(),
         banquetId: initialBanquets[0]?.id || '',
         recipeId: initialRecipes[0]?.id || '',
-        ingredientName: 'Cream',
+        ingredientName: 'Nata',
         wastedQuantity: 20,
         unit: 'ml',
-        reason: 'Expired soon',
+        reason: 'Próximo a caducar',
         dateRecorded: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
     }
 ]
 
 export function getRecipeNameById(recipeId: string, recipes: Recipe[]): string {
-  return recipes.find(r => r.id === recipeId)?.name || 'Unknown Recipe';
+  return recipes.find(r => r.id === recipeId)?.name || 'Receta Desconocida';
 }

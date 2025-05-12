@@ -7,9 +7,9 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto py-8">
       <header className="mb-10 text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-primary">Welcome to CateringFlow</h1>
+        <h1 className="text-5xl font-bold tracking-tight text-primary">Bienvenido a CateringFlow</h1>
         <p className="mt-4 text-xl text-muted-foreground">
-          Streamline your catering operations, from recipe to banquet, and minimize waste.
+          Optimiza tus operaciones de catering, desde la receta hasta el banquete, y minimiza el desperdicio.
         </p>
       </header>
 
@@ -18,14 +18,14 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl">
               <ChefHat className="text-accent" />
-              Manage Recipes
+              Gestionar Recetas
             </CardTitle>
-            <CardDescription>Create, edit, and organize your culinary masterpieces.</CardDescription>
+            <CardDescription>Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Keep all your recipes in one place with detailed ingredients and instructions.</p>
+            <p className="mb-4">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref>
-              <Button className="w-full" variant="outline">Go to Recipes</Button>
+              <Button className="w-full" variant="outline">Ir a Recetas</Button>
             </Link>
           </CardContent>
         </Card>
@@ -34,14 +34,14 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
-              Plan Banquets
+              Planificar Banquetes
             </CardTitle>
-            <CardDescription>Organize events, manage guest lists, and plan menus.</CardDescription>
+            <CardDescription>Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Effortlessly plan your banquets, calculate ingredient needs, and track event details.</p>
+            <p className="mb-4">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref>
-              <Button className="w-full" variant="outline">Go to Banquets</Button>
+              <Button className="w-full" variant="outline">Ir a Banquetes</Button>
             </Link>
           </CardContent>
         </Card>
@@ -50,14 +50,14 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
-              Reduce Waste
+              Reducir Desperdicios
             </CardTitle>
-            <CardDescription>Get AI-powered suggestions to minimize food waste.</CardDescription>
+            <CardDescription>Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Leverage historical data and AI insights to optimize ingredient usage and reduce spoilage.</p>
+            <p className="mb-4">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref>
-              <Button className="w-full" variant="outline">Get AI Suggestions</Button>
+              <Button className="w-full" variant="outline">Obtener Sugerencias de IA</Button>
             </Link>
           </CardContent>
         </Card>
@@ -66,9 +66,9 @@ export default function DashboardPage() {
       <section className="mt-12 py-8 bg-secondary/50 rounded-lg">
         <div className="container mx-auto text-center">
             <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-semibold mb-3">Optimize Your Catering Business</h2>
+            <h2 className="text-3xl font-semibold mb-3">Optimiza Tu Negocio de Catering</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                CateringFlow helps you make data-driven decisions to improve efficiency, cut costs, and deliver exceptional culinary experiences.
+                CateringFlow te ayuda a tomar decisiones basadas en datos para mejorar la eficiencia, reducir costos y ofrecer experiencias culinarias excepcionales.
             </p>
         </div>
       </section>

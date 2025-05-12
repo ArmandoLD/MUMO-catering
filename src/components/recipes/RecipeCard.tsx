@@ -21,7 +21,7 @@ export function RecipeCard({ recipe, onDelete }: RecipeCardProps) {
       <CardContent className="flex-grow">
         <div className="mb-3">
           <h4 className="font-medium text-sm mb-1 flex items-center gap-1">
-            <Utensils className="w-4 h-4 text-muted-foreground" /> Ingredients:
+            <Utensils className="w-4 h-4 text-muted-foreground" /> Ingredientes:
           </h4>
           {recipe.ingredients.length > 0 ? (
             <ul className="list-disc list-inside text-sm space-y-0.5 max-h-24 overflow-y-auto">
@@ -33,21 +33,21 @@ export function RecipeCard({ recipe, onDelete }: RecipeCardProps) {
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-muted-foreground">No ingredients listed.</p>
+            <p className="text-sm text-muted-foreground">No hay ingredientes listados.</p>
           )}
         </div>
         {recipe.servingsPerRecipe && (
-          <Badge variant="secondary">Serves: {recipe.servingsPerRecipe}</Badge>
+          <Badge variant="secondary">Rinde: {recipe.servingsPerRecipe} porciones</Badge>
         )}
       </CardContent>
       <CardFooter className="flex justify-end gap-2 border-t pt-4">
         <Link href={`/recipes/${recipe.id}/edit`} passHref>
           <Button variant="outline" size="sm">
-            <Edit3 className="mr-2 h-4 w-4" /> Edit
+            <Edit3 className="mr-2 h-4 w-4" /> Editar
           </Button>
         </Link>
         <Button variant="destructive" size="sm" onClick={() => onDelete(recipe.id)}>
-          <Trash2 className="mr-2 h-4 w-4" /> Delete
+          <Trash2 className="mr-2 h-4 w-4" /> Eliminar
         </Button>
       </CardFooter>
     </Card>

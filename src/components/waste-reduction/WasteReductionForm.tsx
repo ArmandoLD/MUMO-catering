@@ -18,8 +18,8 @@ import { useAppContext } from "@/context/AppContext";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const wasteReductionFormSchema = z.object({
-  recipeName: z.string().min(1, "Recipe name is required"),
-  historicalWasteData: z.string().min(1, "Historical waste data (JSON format) is required")
+  recipeName: z.string().min(1, "El nombre de la receta es obligatorio"),
+  historicalWasteData: z.string().min(1, "Los datos históricos de desperdicio (formato JSON) son obligatorios")
     .refine((data) => {
       try {
         const parsed = JSON.parse(data);
@@ -32,7 +32,7 @@ const wasteReductionFormSchema = z.object({
       } catch (e) {
         return false;
       }
-    }, "Must be a valid JSON array of historical waste data items. Each item needs: ingredient (string), wastedQuantity (number), unit (string), numberOfServings (number)."),
+    }, "Debe ser un array JSON válido de datos históricos de desperdicio. Cada elemento necesita: ingredient (string), wastedQuantity (number), unit (string), numberOfServings (number)."),
 });
 
 type FormValues = z.infer<typeof wasteReductionFormSchema>;
@@ -80,19 +80,19 @@ export function WasteReductionForm() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Sparkles className="w-6 h-6 text-primary" />
-            AI-Powered Waste Reduction Suggestions
+            Sugerencias de Reducción de Desperdicios con IA
           </CardTitle>
           <CardDescription>
-            Select a recipe or enter its name, and provide historical waste data (in JSON format) to get suggestions for adjusting ingredient quantities.
+            Selecciona una receta o ingresa su nombre, y proporciona datos históricos de desperdicio (en formato JSON) para obtener sugerencias para ajustar las cantidades de ingredientes.
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
           <CardContent className="space-y-6">
             <div>
-              <Label htmlFor="recipeIdSelect">Select Recipe (Populates Fields Below)</Label>
+              <Label htmlFor="recipeIdSelect">Seleccionar Receta (Autocompleta los Campos)</Label>
               <Select onValueChange={handleRecipeSelect}>
                 <SelectTrigger id="recipeIdSelect">
-                  <SelectValue placeholder="Select a recipe to auto-fill data" />
+                  <SelectValue placeholder="Selecciona una receta para autocompletar" />
                 </SelectTrigger>
                 <SelectContent>
                   {recipes.map(recipe => (
@@ -103,24 +103,24 @@ export function WasteReductionForm() {
             </div>
 
             <div>
-              <Label htmlFor="recipeName">Recipe Name</Label>
-              <Input id="recipeName" {...register("recipeName")} placeholder="e.g., Tomato Soup" />
+              <Label htmlFor="recipeName">Nombre de la Receta</Label>
+              <Input id="recipeName" {...register("recipeName")} placeholder="Ej: Sopa de Tomate" />
               {errors.recipeName && <p className="text-sm text-destructive mt-1">{errors.recipeName.message}</p>}
             </div>
 
             <div>
-              <Label htmlFor="historicalWasteData">Historical Waste Data (JSON Array)</Label>
+              <Label htmlFor="historicalWasteData">Datos Históricos de Desperdicio (Array JSON)</Label>
               <Textarea
                 id="historicalWasteData"
                 {...register("historicalWasteData")}
                 rows={8}
                 placeholder={`[
-  { "ingredient": "Tomatoes", "wastedQuantity": 0.5, "unit": "kg", "numberOfServings": 50 },
-  { "ingredient": "Onions", "wastedQuantity": 0.2, "unit": "kg", "numberOfServings": 50 }
+  { "ingredient": "Tomates", "wastedQuantity": 0.5, "unit": "kg", "numberOfServings": 50 },
+  { "ingredient": "Cebollas", "wastedQuantity": 0.2, "unit": "kg", "numberOfServings": 50 }
 ]`}
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Each item must include: "ingredient" (string), "wastedQuantity" (number), "unit" (string), "numberOfServings" (number).
+                Cada elemento debe incluir: "ingredient" (string), "wastedQuantity" (number), "unit" (string), "numberOfServings" (number).
               </p>
               {errors.historicalWasteData && <p className="text-sm text-destructive mt-1">{errors.historicalWasteData.message}</p>}
             </div>
@@ -128,9 +128,9 @@ export function WasteReductionForm() {
           <CardFooter>
             <Button type="submit" disabled={isLoading} className="w-full">
               {isLoading ? (
-                <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Analyzing...</>
+                <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Analizando...</>
               ) : (
-                <><Lightbulb className="mr-2 h-4 w-4" /> Get Suggestions</>
+                <><Lightbulb className="mr-2 h-4 w-4" /> Obtener Sugerencias</>
               )}
             </Button>
           </CardFooter>
@@ -150,18 +150,18 @@ export function WasteReductionForm() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl text-primary">
               <ChefHat className="w-7 h-7" />
-              Suggestions for {selectedRecipeName || watch("recipeName")}
+              Sugerencias para {selectedRecipeName || watch("recipeName")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-2">Adjusted Ingredients:</h3>
+              <h3 className="text-lg font-semibold mb-2">Ingredientes Ajustados:</h3>
               {aiSuggestion.adjustedIngredients.length > 0 ? (
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Ingredient</TableHead>
-                      <TableHead>New Recommended Quantity</TableHead>
+                      <TableHead>Ingrediente</TableHead>
+                      <TableHead>Nueva Cantidad Recomendada</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -174,12 +174,12 @@ export function WasteReductionForm() {
                   </TableBody>
                 </Table>
               ) : (
-                <p className="text-muted-foreground">No specific ingredient adjustments provided.</p>
+                <p className="text-muted-foreground">No se proporcionaron ajustes específicos de ingredientes.</p>
               )}
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Reasoning:</h3>
-              <p className="text-muted-foreground whitespace-pre-wrap bg-muted/50 p-3 rounded-md">{aiSuggestion.reasoning || "No reasoning provided."}</p>
+              <h3 className="text-lg font-semibold mb-2">Justificación:</h3>
+              <p className="text-muted-foreground whitespace-pre-wrap bg-muted/50 p-3 rounded-md">{aiSuggestion.reasoning || "No se proporcionó justificación."}</p>
             </div>
           </CardContent>
         </Card>

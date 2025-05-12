@@ -16,18 +16,12 @@ export async function getWasteReductionSuggestions(
 
     const result: SuggestRecipeAdjustmentsOutput = await suggestRecipeAdjustments(input);
     
-    // Parse the adjustedIngredients string if it's JSON
     let parsedAdjustedIngredients: AdjustedIngredient[] = [];
     try {
       parsedAdjustedIngredients = JSON.parse(result.adjustedIngredients);
     } catch (parseError) {
-      console.warn("AI returned non-JSON adjustedIngredients, using as string:", result.adjustedIngredients);
-      // Fallback: if it's not JSON, maybe it's a plain string description. Wrap it.
-      // Or handle based on expected AI behavior. For now, let's assume it aims for JSON.
-      // If it's critical it's JSON, throw error or refine prompt.
-      // For now, we'll pass it as potentially unparsed. The UI might need to handle this.
-      // This mapping helps ensure the type structure even if parsing fails.
-      parsedAdjustedIngredients = [{ ingredientName: "AI Suggestion", newRecommendedQuantity: result.adjustedIngredients }];
+      console.warn("La IA devolvió ingredientesAjustados que no son JSON, usando como cadena de texto:", result.adjustedIngredients);
+      parsedAdjustedIngredients = [{ ingredientName: "Sugerencia de IA", newRecommendedQuantity: result.adjustedIngredients }];
     }
 
 
@@ -39,10 +33,10 @@ export async function getWasteReductionSuggestions(
     return { data: suggestion };
 
   } catch (error) {
-    console.error("Error calling AI for waste reduction suggestions:", error);
+    console.error("Error al llamar a la IA para sugerencias de reducción de desperdicios:", error);
     if (error instanceof Error) {
         return { error: error.message };
     }
-    return { error: "An unknown error occurred while fetching AI suggestions." };
+    return { error: "Ocurrió un error desconocido al obtener sugerencias de la IA." };
   }
 }

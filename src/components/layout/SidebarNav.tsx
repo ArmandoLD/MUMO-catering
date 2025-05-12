@@ -7,10 +7,10 @@ import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/recipes', label: 'Recipes', icon: ChefHat },
-  { href: '/banquets', label: 'Banquets', icon: PartyPopper },
-  { href: '/waste-reduction', label: 'Waste Reduction AI', icon: Sparkles },
+  { href: '/', label: 'Panel', icon: LayoutDashboard },
+  { href: '/recipes', label: 'Recetas', icon: ChefHat },
+  { href: '/banquets', label: 'Banquetes', icon: PartyPopper },
+  { href: '/waste-reduction', label: 'IA Reducción Desperdicios', icon: Sparkles },
 ];
 
 export function SidebarNav() {
