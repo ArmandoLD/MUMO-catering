@@ -16,14 +16,14 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
+            <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <ChefHat className="text-accent" />
               Gestionar Recetas
             </CardTitle>
-            <CardDescription>Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
+            <CardDescription className="text-center">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
+            <p className="mb-4 text-center">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref>
               <Button className="w-full" variant="outline">Ir a Recetas</Button>
             </Link>
@@ -32,14 +32,14 @@ export default function DashboardPage() {
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
+            <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <PartyPopper className="text-accent" />
               Planificar Banquetes
             </CardTitle>
-            <CardDescription>Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
+            <CardDescription className="text-center">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
+            <p className="mb-4 text-center">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref>
               <Button className="w-full" variant="outline">Ir a Banquetes</Button>
             </Link>
@@ -48,14 +48,14 @@ export default function DashboardPage() {
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
+            <CardTitle className="flex items-center justify-center gap-2 text-2xl">
               <Sparkles className="text-accent" />
               Reducir Desperdicios
             </CardTitle>
-            <CardDescription>Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
+            <CardDescription className="text-center">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
+            <p className="mb-4 text-center">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref>
               <Button className="w-full" variant="outline">Obtener Sugerencias de IA</Button>
             </Link>
