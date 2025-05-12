@@ -20,10 +20,10 @@ export default function DashboardPage() {
               <ChefHat className="text-accent" />
               Gestionar Recetas
             </CardTitle>
-            <CardDescription className="mt-2 px-2">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-12">Crea, edita y organiza tus obras maestras culinarias.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow">Mantén todas tus recetas en un solo lugar con ingredientes e instrucciones detalladas.</p>
             <Link href="/recipes" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Recetas</Button>
             </Link>
@@ -36,10 +36,10 @@ export default function DashboardPage() {
               <PartyPopper className="text-accent" />
               Banquetes
             </CardTitle>
-            <CardDescription className="mt-2 px-2">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-12">Organiza eventos, gestiona listas de invitados y planifica menús.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow">Planifica tus banquetes sin esfuerzo, calcula las necesidades de ingredientes y registra los detalles del evento.</p>
             <Link href="/banquets" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Ir a Banquetes</Button>
             </Link>
@@ -52,10 +52,10 @@ export default function DashboardPage() {
               <Sparkles className="text-accent" />
               Desperdicios
             </CardTitle>
-            <CardDescription className="mt-2 px-2">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
+            <CardDescription className="mt-2 px-2 min-h-12">Obtén sugerencias con IA para minimizar el desperdicio de alimentos.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-grow pt-2 px-6">
-            <p className="mb-6 text-center text-sm text-muted-foreground flex-grow">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
+            <p className="mb-6 text-center text-sm text-foreground flex-grow">Aprovecha los datos históricos y los conocimientos de IA para optimizar el uso de ingredientes y reducir el deterioro.</p>
             <Link href="/waste-reduction" passHref className="mt-auto">
               <Button className="w-full" variant="outline">Obtener Sugerencias de IA</Button>
             </Link>
